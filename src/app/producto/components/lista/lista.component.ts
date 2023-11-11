@@ -19,6 +19,7 @@ export class ListaComponent implements OnInit {
     title: "",
     price: 0,
     images : [],
+    categoryId: "",
     description : "",
   }
 

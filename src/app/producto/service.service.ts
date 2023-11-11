@@ -21,6 +21,7 @@ export class ServiceService {
     return this.http.get(`${this.baseUrl}/${id}`)
   }
   postProducto(producto: ProductoInterface): Observable<any> {
+
     return this.http.post(this.baseUrl, producto);
   }
 
@@ -35,6 +36,7 @@ export class ServiceService {
   $modal = new EventEmitter<any>();
   $modalDelete = new EventEmitter<any>();
   $modalInput = new EventEmitter<any>();
+  $modalCreate = new EventEmitter<any>();
 
   viewItem() {
 

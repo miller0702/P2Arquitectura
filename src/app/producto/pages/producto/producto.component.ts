@@ -21,6 +21,8 @@ export class ProductoComponent implements OnInit {
 
   modalInput! : boolean;
 
+  modalCreate! : boolean;
+
   elementos :  ProductoInterface[] = [];
 
 
@@ -31,6 +33,13 @@ export class ProductoComponent implements OnInit {
 
     this.service.$modalDelete.subscribe((valor) => {
       this.modalDelete = valor
+    })
+    
+    this.service.$modalInput.subscribe((valor) => {
+      this.modalInput = valor
+    })
+    this.service.$modalCreate.subscribe((valor) => {
+      this.modalCreate = valor
     })
 
     this.service.getAll().subscribe(
@@ -61,11 +70,11 @@ export class ProductoComponent implements OnInit {
   }
 
   openModalInput(id: string){
-
-    if(id !== ""){
       this.itemId = id
-    }
-    this.modalDelete = true
+      this.modalInput = true
+  }
+  openModalCreate(){
+      this.modalCreate = true
   }
 
 }

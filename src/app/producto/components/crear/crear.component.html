@@ -1,1 +1,25 @@
-<button class="btn btn-success" style="background-color: #ee7724 !important; border: none;  transition: background-color 0.5s ease-in-out"><i class="fa-solid fa-plus" style="color: #ffffff;"></i> Nuevo Producto</button>
+<div id="modal" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header" style="background-color: #ee7724 !important;">
+          <button type="button" (click)="closeModal()" class="btn-close bg-danger" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body" style="color: black;">
+          <table>
+            <tbody>
+            <tr>
+              <td  rowspan="2"> <img [ngSrc]="elemento.images[0]" width="200" height="200" class="rounded" /></td>
+              <td style=" text-align: left;">
+              </td>
+            </tr>
+          </tbody>
+          </table>
+        </div>
+        <div class="modal-footer">
+          <button type="button" (click)="closeModal()" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+          <button type="button" (click)="createItem()" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  

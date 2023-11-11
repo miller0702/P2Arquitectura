@@ -18,6 +18,7 @@ export class EliminarComponent {
     title: "",
     price: 0,
     images : [],
+    categoryId: "",
     description : "",
   }
 
@@ -25,7 +26,8 @@ export class EliminarComponent {
   deleteItem() : void {
     this.service.deleteProducto(this.id).subscribe(
       (res :any)=>{
-        this.elemento = res;
+        console.log('Elemente eliminado')
+        // this.elemento = res;
       } ,
       (ERR :any)=> {
         console.log("error", ERR);

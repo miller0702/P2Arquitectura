@@ -3,5 +3,6 @@ export interface ProductoInterface {
     title : string ,
     price: number,
     images : string[],
+    categoryId: string,
     description : string,
 }
