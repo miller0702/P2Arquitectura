@@ -21,12 +21,11 @@ export class ServiceService {
     return this.http.get(`${this.baseUrl}/${id}`)
   }
   postProducto(producto: ProductoInterface): Observable<any> {
-
     return this.http.post(this.baseUrl, producto);
   }
 
-  putProducto(producto: ProductoInterface): Observable<any> {
-    return this.http.put(`${this.baseUrl}/${producto.id}`, producto);
+  putProducto(id: string, producto: ProductoInterface): Observable<any> {
+    return this.http.put(`${this.baseUrl}/${id}`, producto);
   }
 
   deleteProducto(id: string): Observable<any> {

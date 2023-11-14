@@ -11,6 +11,7 @@ import { FooterComponent } from './public/footer/footer.component';
 import { NgOptimizedImage } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
+import { DataTablesModule } from 'angular-datatables';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { TooltipModule } from 'ngx-bootstrap/tooltip';
     HttpClientModule,
     NgOptimizedImage,
     TooltipModule.forRoot(),
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    DataTablesModule
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS , useClass : AuthInterceptor , multi: true}

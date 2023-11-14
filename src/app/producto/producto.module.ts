@@ -8,6 +8,8 @@ import { CrearComponent } from './components/crear/crear.component';
 import { ActualizarComponent } from './components/actualizar/actualizar.component';
 import { EliminarComponent } from './components/eliminar/eliminar.component';
 import { HeaderComponent } from '../public/header/header.component';
+import { FormsModule } from '@angular/forms';
+import { FiltroPipe } from './pipes/filtro.pipe';
 
 @NgModule({
   declarations: [
@@ -16,12 +18,14 @@ import { HeaderComponent } from '../public/header/header.component';
     CrearComponent,
     ActualizarComponent,
     EliminarComponent,
-    HeaderComponent
+    HeaderComponent,
+    FiltroPipe
   ],
   imports: [
     CommonModule,
     ProductoRoutingModule,
     NgOptimizedImage,
+    FormsModule
   ]
 })
 export class ProductoModule { }

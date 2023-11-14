@@ -2,27 +2,37 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header" style="background-color: #ee7724 !important;">
-          <h5 class="modal-title">{{elemento.title}}</h5>
+          <h5 class="modal-title">Editar Producto</h5>
           <button type="button" (click)="closeModal()" class="btn-close bg-danger" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body" style="color: black;">
-          <table>
-            <tbody>
-            <tr>
-              <td  rowspan="2"> <img [ngSrc]="elemento.images[0]" width="200" height="200" class="rounded" /></td>
-              <td style=" text-align: left;">
-                <h3 style="margin-left: 10px;">DESCRIPCIÓN</h3>
-                <p style="margin-left: 10px;">{{elemento.description}}</p>
-                <h4 style="margin-left: 10px;">Precio: $ {{elemento.price}}</h4>
-              </td>
-            </tr>
-          </tbody>
-          </table>
+          <input type="hidden" [(ngModel)] = "elemento.id">
+          <div class="input-group flex-nowrap">
+            <span class="input-group-text" style="background-color: #ee7724 !important; color: white;" id="addon-wrapping">Titulo</span>
+            <input type="text" class="form-control" [(ngModel)] = "elemento.title" value="{{elemento.title}}" placeholder="Escriba un titulo" required>
+          </div><br>
+          <div class="input-group flex-nowrap">
+            <span class="input-group-text" style="background-color: #ee7724 !important; color: white;" id="addon-wrapping">Descripción</span>
+            <input type="text" class="form-control" [(ngModel)] = "elemento.description" value="{{elemento.description}}" placeholder="Escriba una descripcion" required>
+          </div><br>
+          <div class="input-group flex-nowrap">
+            <span class="input-group-text" style="background-color: #ee7724 !important; color: white;" id="addon-wrapping">Precio</span>
+            <input type="number" class="form-control" [(ngModel)] = "elemento.price" value="{{elemento.price}}" placeholder="Escriba un precio" required>
+          </div><br>
+          <div class="input-group flex-nowrap">
+            <span class="input-group-text" style="background-color: #ee7724 !important; color: white;" id="addon-wrapping">Categoria</span>
+            <input type="number" class="form-control" [(ngModel)] = "elemento.categoryId" value="{{elemento.categoryId}}" placeholder="Escriba una Categoria" required>
+          </div><br>
+          <div class="input-group flex-nowrap">
+            <span class="input-group-text" style="background-color: #ee7724 !important; color: white;" id="addon-wrapping">Url de imagen</span>
+            <input type="text" class="form-control" [(ngModel)]= " elemento.images[0]" value="{{elemento.images[0]}}" placeholder="Escriba una url de imagen" required>
+          </div>
         </div>
         <div class="modal-footer">
+
+          <button type="button" (click)="updateItem()" class="btn btn-warning" data-bs-dismiss="modal">Actualizar</button>
           <button type="button" (click)="closeModal()" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
         </div>
       </div>
     </div>
   </div>
-  
